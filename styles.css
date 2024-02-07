@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body {
+    background-color: #ef0000;
+    min-height: 100vh;
+    font-family: 'Playfair Display', serif;
+}
+
+.launch-time {
+    color: #E4F2E7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+}
+
+.launch-time div {
+    flex-basis: 20%;
+}
+
+.launch-time div p {
+    font-size: 120px;
+    margin-bottom: 0px;
+}

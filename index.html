@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="website icon" type="png" href="image/cat.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="intro.css">
+    <title>Happy New Year 2024</title>
+
+    <style>
+        /* CSS cho phần đếm ngược */
+        
+        .launch-time {
+            text-align: center;
+            font-size: 24px;
+            display: flex;
+            /* Thêm thuộc tính display: flex */
+            justify-content: center;
+            /* Canh giữa theo chiều ngang */
+            align-items: center;
+            /* Canh giữa theo chiều dọc */
+        }
+        
+        .launch-time div {
+            margin: 0 10px;
+        }
+        /* Ẩn phần animation ban đầu */
+        
+        .box-slider {
+            display: none;
+        }
+        /* CSS cho nền toàn màn hình */
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Chiều cao là 100% của viewport */
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            /* Gradient tùy chỉnh */
+            display: flex;
+            justify-content: center;
+            /* Canh giữa theo chiều ngang */
+            align-items: center;
+            /* Canh giữa theo chiều dọc */
+        }
+    </style>
+
+    <script>
+        // Chờ cho trang web tải xong
+        document.addEventListener("DOMContentLoaded", function() {
+            // Khai báo hàm đếm ngược
+            function startCountdown() {
+                var countdownDate = new Date("Feb 7, 2024 22:07:30").getTime();
+                //var countdownDate = new Date("Feb 10, 2024 00:00:00").getTime();
+                var x = setInterval(function() {
+                    var now = new Date().getTime();
+                    var timeLeft = countdownDate - now;
+
+                    if (timeLeft <= 0) {
+                        clearInterval(x);
+                        hideCountdown(); // Ẩn phần đếm ngược khi kết thúc
+                        showAnimation(); // Hiển thị phần animation khi đếm ngược kết thúc
+                        return;
+                    }
+
+                    var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    document.getElementById("days").innerHTML = days;
+                    document.getElementById("hours").innerHTML = hours;
+                    document.getElementById("minutes").innerHTML = minutes;
+                    document.getElementById("seconds").innerHTML = seconds;
+
+                }, 1000);
+            }
+
+            // Bắt đầu đếm ngược
+            startCountdown();
+
+            // Ẩn phần đếm ngược
+            function hideCountdown() {
+                document.querySelector('.launch-time').style.display = 'none';
+            }
+
+            // Hiển thị phần animation
+            function showAnimation() {
+                document.querySelector('.box-slider').style.display = 'block';
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Phần đếm ngược -->
+    <div class="launch-time">
+        <div>
+            <p id="days">00</p>
+            <span>Ngày</span>
+        </div>
+        <div>
+            <p id="hours">00</p>
+            <span>Giờ</span>
+        </div>
+        <div>
+            <p id="minutes">00</p>
+            <span>Phút</span>
+        </div>
+        <div>
+            <p id="seconds">00</p>
+            <span>Giây</span>
+        </div>
+    </div>
+
+    <!-- Phần animation -->
+    <div class="box-slider">
+        <div class="slider1">
+            <img src="image/bgr.jpg" alt="">
+            <div class="happynewyear">
+                <div class="textHappynewyear">
+                    <div class="box-span">
+                        <span></span>
+                    </div>
+                    <div class="box-span">
+                        <span></span>
+                    </div>
+                    <div class="box-span">
+                        <span></span>
+                    </div>
+                    <div class="box-span">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-button">
+                <div class="button">
+                    <button>Ấn vào đây nè!</button>
+                    <span><i class="fa-solid fa-heart"></i></span>
+                </div>
+            </div>
+            <div class="box-slider_img1">
+                <div class="slider-img1">
+                    <img src="image/circular-pattern.png" alt="">
+                </div>
+                <div class="pattern">
+                    <img src="image/pattern.png" alt="">
+                </div>
+            </div>
+            <div class="circle">
+                <span></span>
+            </div>
+            <div class="box-flower">
+                <div class="flower-img">
+                    <img src="image/flower.png" alt="">
+                </div>
+                <div class="flower-img">
+                    <img src="image/flower.png" alt="">
+                </div>
+                <div class="flower-img">
+                    <img src="image/flower1.png" alt="">
+                </div>
+                <div class="flower-img">
+                    <img src="image/flower1.png" alt="">
+                </div>
+                <div class="flower-img">
+                    <img src="image/flower2.png" alt="">
+                </div>
+                <div class="flower-img">
+                    <img src="image/flower2.png" alt="">
+                </div>
+            </div>
+            <div class="box-slider_img2">
+                <div class="box-slider-img2">
+                    <div class="slider-img2">
+                        <img src="image/lanterns.png" alt="">
+                    </div>
+                </div>
+                <div class="box-slider-img3">
+                    <div class="slider-img3">
+                        <img src="image/lanterns.png" alt="">
+                    </div>
+                </div>
+                <div class="box-slider-img4">
+                    <div class="slider-img4">
+                        <img src="image/lanterns.png" alt="">
+                    </div>
+                </div>
+                <div class="box-slider-img5">
+                    <div class="slider-img5">
+                        <img src="image/lanterns.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="slider-img6">
+                <img src="image/cloud-red1.png" alt="">
+                <img src="image/cloud-red2.png" alt="">
+                <img src="image/cloud-red2.png" alt="">
+            </div>
+            <div class="box-lion_dance">
+                <div class="lion_dance1">
+                    <img src="image/Lion-dance.gif" alt="">
+                </div>
+                <div class="lion_dance2">
+                    <img src="image/Lion-dance2.gif" alt="">
+                </div>
+            </div>
+            <div class="cat">
+                <img src="image/cat.png" alt="">
+            </div>
+            <div class="box-number">
+                <div class="number2023">
+                    <div class="number">
+                        <span>2</span>
+                    </div>
+                    <div class="number">
+                        <span>0</span>
+                    </div>
+                    <div class="number">
+                        <span>2</span>
+                    </div>
+                    <div class="number">
+                        <span>4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box-rim">
+                <div class="rim1">
+                    <img src="image/rim1.png" alt="">
+                </div>
+                <div class="rim2">
+                    <img src="image/rim1.png" alt="">
+                </div>
+            </div>
+            <div class="box-texture_clouds">
+                <div class="texture_clouds1">
+                    <img src="image/texture-clouds.png" alt="">
+                </div>
+                <div class="texture_clouds1">
+                    <img src="image/texture-clouds.png" alt="">
+                </div>
+                <div class="texture_clouds1">
+                    <img src="image/texture-clouds.png" alt="">
+                </div>
+                <div class="texture_clouds1">
+                    <img src="image/texture-clouds.png" alt="">
+                </div>
+                <div class="texture_clouds1">
+                    <img src="image/texture-clouds.png" alt="">
+                </div>
+            </div>
+            <div class="box-big_clouds">
+                <div class="big_clouds1">
+                    <img src="image/big-clouds1.png" alt="">
+                </div>
+                <div class="big_clouds2">
+                    <img src="image/big-clouds2.png" alt="">
+                </div>
+                <div class="big_clouds3">
+                    <img src="image/big-clouds3.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="slider2">
+            <div class="rhombus"></div>
+            <div class="rhombus"></div>
+            <div class="rhombus-img">
+                <img src="image/ebe/kieuyen.jpg" alt="">
+            </div>
+            <div class="mail">
+                <button><i class="fa-regular fa-envelope"></i></button>
+                <span class="heart"><i class="fa-solid fa-heart"></i></span>
+            </div>
+        </div>
+        <div class="slider3">
+            <div class="box-content">
+                <div class="left">
+                    <img src="image/bg1.jpg" alt="">
+                    <div class="center">
+
+                    </div>
+                    <div class="lanterns-content">
+                        <img src="image/lanterns.png" alt="">
+                    </div>
+                    <div class="box-big_flowers">
+                        <img src="image/big-flower.png" alt="">
+                        <img src="image/big-flower.png" alt="">
+                        <img src="image/big-flower.png" alt="">
+                        <img src="image/big-flower1.png" alt="">
+                        <img src="image/big-flower1.png" alt="">
+                        <img src="image/big-flower2.png" alt="">
+                        <img src="image/big-flower2.png" alt="">
+                        <img src="image/big-flower2.png" alt="">
+                    </div>
+                    <div class="box-circle_left">
+                        <div class="circle_left">
+                            <img src="image/circular-pattern.png" alt="">
+                            <div class="text-content">
+                                <h2>Happy New</h2>
+                                <h1>Year</h1>
+                                <span>2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apricot_blossom">
+                        <img src="image/apricot-blossom.png" alt="">
+                        <img src="image/apricot-blossom.png" alt="">
+                        <img src="image/apricot-blossom.png" alt="">
+                        <img src="image/apricot-blossom.png" alt="">
+                        <img src="image/apricot-blossom.png" alt="">
+                        <img src="image/apricot-blossom.png" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="content">
+                        <!--                         <div class="title">
+                            <h1>&#129505Gửi đồng chí ngừi eo!</h1>
+                        </div> -->
+                        <p>Năm mới tết đến, chúc đồng chí Kiều Yến năm mới vui vẻ, mạnh khỏe, xinh lung linh và đặc biệt là iu Nam Pan nhiều hơn nữa nhéeeee. Năm mới rùi mong cậu có thể cất hết tất cả những chuyện buồn của năm cũ lại và đón một năm mới tốt
+                            đẹp hơn, tớ xin hứa là năm mới tớ sẽ iu thương cậu nhiều hơn, chăm sóc cậu tốt hơn và không làm cậu buồn nữa, iu cậu rấtttt nhiềuuuu❤️❤️❤️❤️.
+                        </p>
+                        <div class="fixedContent">
+                            <h3>Người gửi: Nam Pan🥰❤️😘</h3>
+                        </div>
+                        <div id="a">
+                            <img src="image/peach-goma.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+
+    <audio id="song">
+        <source src="image/nhac.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="intro.js"></script>
+</body>
+
+</html>
